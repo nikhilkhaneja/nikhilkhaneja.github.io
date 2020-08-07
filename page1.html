@@ -9,7 +9,8 @@
   <link rel="shortcut icon" href="assets/images/logo1.png" type="image/x-icon">
   <meta name="description" content="">
   <meta name="amp-script-src" content="">
-  
+
+
   <title>Home</title>
   
 <link rel="canonical" href="./">
@@ -28,51 +29,120 @@ input[type=button], input[type=submit], input[type=reset] {
   cursor: pointer;
 }
 </style>
-<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="style.css">
+ 
   <script async  src="https://cdn.ampproject.org/v0.js"></script>
+
+
   <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
   <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+
+  
 </head>
 <body>
   <section class="menu horizontal-menu cid-s6S2jR3w0c" id="menu2-0">
+
+    
+    
 
     <nav class="navbar navbar-dropdown navbar-expand-lg navbar-fixed-top">
        <div class="menu-container container-fluid"> 
       <div class="navbar-brand">
           <span class="navbar-logo">
+              
           </span>
           <p style = "color : #eeff00"class="brand-name mbr-fonts-style mbr-bold display-5">UPLOAD IMAGE USING HTML TESTING<br></p>
       </div>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      </div>
+      
+   
+        
+
+
+
+    
+
 </section>
 
 <section class="engine"><a href="https://mobirise.info/u">bootstrap html templates</a></section><section class="team2 mbr-section cid-s6S657cIx3" id="team2-3">
-    <div class="container">
+
+    
+    
+    <div class="container row">
         <div class="mbr-row mbr-jc-c">
             <div style = "background-color : #eeff00" class="card mbr-col-sm-12 mbr-col-md-12 mbr-col-lg-6 last-child">
                 <div style = "background-color : #eeff00" class="card-wrapper mbr-p-5 mbr-flex">
-                    <div  style = "background-color : #eeff00" class="card-img mbr-col-sm-12 mbr-col-md-0 mbr-m-auto"> 
-                    </div>
-                    <div style = "background-color : #eeff00" class="card-box mbr-col-sm-24 mbr-col-md-24 mbr-m-auto mbr-p-2">
-                    	<form action="/action_page.php">
-  						<label style = "font-size : 24px;color : black" class="mbr-fonts-style card-subtitle  mbr-white mbr-semibold display-4" for="fname">First name</label><br>
-  						<input type="text" id="fname" name="fname" required><br><br>
-  						<label style = "font-size : 24px;color : black"  class="mbr-fonts-style card-subtitle align-center mbr-white mbr-semibold display-4" for="lname">Last name</label><br>
-  						<input type="text" id="lname" name="lname" required><br><br>
-  						<label style = "font-size : 24px;color : black"  class="mbr-fonts-style card-subtitle align-center mbr-white mbr-semibold display-4" for="lname">Description</label><br>
-  						<input type="text" id="lname" name="lname" required><br><br>
-  						<label style = "font-size : 24px;color : black"  class="mbr-fonts-style card-subtitle align-center mbr-white mbr-semibold display-4" for="lname">Capture Image</label><br>
-  						<input type="file" name="image" accept="image/*" capture="user" required>
-  						<input type="file" name="image1" accept="image/*" capture="user">
-  						<input type="file" name="image2" accept="image/*" capture="user">
-                		<input type="Submit" value="Submit">
+                    <div  style = "background-color : #eeff00" class="card-img mbr-col-sm-12 mbr-col-md-0 mbr-m-auto">
                         
+                    </div>
+                    <div style = "background-color : #eeff00" class="form card-box mbr-col-sm-24 mbr-col-md-24 mbr-m-auto mbr-p-2">
+                     <form action="" class="form">
+               <div class="control-group">
+
+                <label style = "font-size : 24px;color : black" class="mbr-fonts-style card-subtitle  mbr-white mbr-semibold display-4" for="fname">First name</label><br>
+                <input type="text" name="first_name">
+
+                <label style = "font-size : 24px;color : black"  class="mbr-fonts-style card-subtitle align-center mbr-white mbr-semibold display-4" for="lname">Last name</label><br>
+                 <input type="text" name="last_name">
+
+                  <label style = "font-size : 24px;color : black"  class="mbr-fonts-style card-subtitle align-center mbr-white mbr-semibold display-4" for="lname">Description</label><br>
+                 <input type="text" name="description">
+
+                  <label style = "font-size : 24px;color : black"  class="mbr-fonts-style card-subtitle align-center mbr-white mbr-semibold display-4" for="lname">Image</label><br>
+              <input class ="image" id = "image" type="file" name="image" accept="image/*" capture="user"> 
+                </div>
+                <div>
+              <button style = "color: white;background-color :black;width :350px;"class="submit btn btn-primary">SUBMIT</button>
+            </div>                  
+                 
+             
+                        </form>
+                     
                     </div>
                 </div>
             </div>
+            
+            
+        
+            
+            
         </div>
     </div>
+
 </section>
+
+
+
 </body>
+</html>
+
+
+    <script src="https://www.gstatic.com/firebasejs/3.0.2/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+    <script>
+    $.fn.getFormData = function() {
+      var fields = this.find('[name]');
+      var result = {};
+      $.each(fields, function (i, el) {
+        result[el.name] = el.value;
+      });
+      return result;
+    };
+      var config = {
+          apiKey: "AIzaSyBGKQ6oVGpGi2pqlnDNaH0ORQLfdfXXsHY",
+    authDomain: "image-testing-9c2e6.firebaseapp.com",
+    databaseURL: "https://image-testing-9c2e6.firebaseio.com",
+    projectId: "image-testing-9c2e6",
+    storageBucket: "image-testing-9c2e6.appspot.com",
+      };
+      var fb = firebase.initializeApp(config);
+      var user_id;
+      $('.submit').on('click', function (e) {
+        e.preventDefault();
+        var updates = {};
+        user_id = user_id ? user_id : fb.database().ref().child('user-data').push().key;
+        updates[user_id] = $('form').getFormData();
+        fb.database().ref().child('user-data').update(updates);
+      });
+    </script>
+  </body>
 </html>
