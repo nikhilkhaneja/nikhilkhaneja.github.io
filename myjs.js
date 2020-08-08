@@ -51,6 +51,13 @@ function uploadFile() {
         	firebase.database().ref().child('user-data').update(updates);
 	 	});
  	});
+	var w = 700;
+    var h = 200;
+    var left = Number((screen.width/2)-(w/2));
+    var tops = Number((screen.height/2)-(h/2));
+
+	window.open("pop.html", '', 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+tops+', left='+left);
+
 }
 
 
