@@ -48,13 +48,14 @@ function uploadFile() {
         tr = downloadURL;
         console.log(downloadURL); 
         var postData = {
-        	url : downloadURL,
+        	Image_URL : downloadURL,
         	Data:  $('form').getFormData()
         }
         updates['/post' + user_id] = postData;
         firebase.database().ref().child('user-data').update(updates);
 	 });
  	});
+
 }
 
 
