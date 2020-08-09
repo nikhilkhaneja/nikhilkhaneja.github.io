@@ -95,17 +95,10 @@ input[type=button], input[type=submit], input[type=reset] {
 </html>
 
 
-    <script src="https://www.gstatic.com/firebasejs/3.0.2/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
     <script>
-    $.fn.getFormData = function() {
-      var fields = this.find('[name]');
-      var result = {};
-      $.each(fields, function (i, el) {
-        result[el.name] = el.value;
-      });
-      return result;
-    };
+
       var config = {
     apiKey: "AIzaSyBdN76fdS0vIOWyots_5YNcbvuk1WbG2aE",
     authDomain: "howdy-27dd6.firebaseapp.com",
