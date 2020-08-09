@@ -9,7 +9,7 @@
   <link rel="shortcut icon" href="assets/images/logo4.png" type="image/x-icon">
   <meta name="description" content="">
   <meta name="amp-script-src" content="">
-  
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <title>Home</title>
   
 <link rel="canonical" href="./">
@@ -58,9 +58,9 @@
                  
                         
                 </form>
-              <div style = "text-align: center">
-                	 <progress id="progressBar" value="0" max="100" style="width:320px;margin-top : 10px;heoght : 20px;"></progress>
-                </div>
+             <div style = "text-align:center;margin-top: 5px;"class="w3-light-grey w3-round-xlarge">
+    <div id="myBar" class="w3-yellow w3-round-xlarge" style="height:30px;width:0"></div>
+  </div>
 <div class="mbr-section-btn mbr-col-sm-12 mbr-col-md-12 mbr-col-lg-12 align-center"><button type="submit" class="btn btn-form btn-black display-4">Upload</button></div>
                  
             </div>
@@ -98,5 +98,20 @@
  
     </script>
     <script type="text/javascript" src = "mysecond.js"></script>
+<script>
+function move() {
+  var elem = document.getElementById("myBar");   
+  var width = 1;
+  var id = setInterval(frame, 150);
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+    } else {
+      width++; 
+      elem.style.width = width + '%'; 
+    }
+  }
+}
+</script>
   </body>
 </html>
