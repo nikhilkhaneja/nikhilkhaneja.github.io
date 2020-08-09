@@ -9,9 +9,9 @@
   <link rel="shortcut icon" href="assets/images/logo4.png" type="image/x-icon">
   <meta name="description" content="">
   <meta name="amp-script-src" content="">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <title>Home</title>
   
+  <title>Home</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="canonical" href="./">
  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
 <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
@@ -54,14 +54,15 @@
                 	<input  name="fname" placeholder="Enter First Name" value="">
                 	<input name="lname"  placeholder="Enter Last Name"value="">
                 	<input  name="desc" placeholder="Enter Description" value="">
-       				<input type = "file" id = "fileButton" name = "fileButton" multiple = ""  accept = "images">
-                 
+       				<input type = "file" id = "fileButton" name = "fileButton" multiple = ""  accept = "images" onchange="uploadFile()">
+                
                         
                 </form>
-             <div style = "text-align:center;margin-top: 5px;"class="w3-light-grey w3-round-xlarge">
+                <div style = "text-align:center;margin-top: 5px;"class="w3-light-grey w3-round-xlarge">
     <div id="myBar" class="w3-yellow w3-round-xlarge" style="height:30px;width:0"></div>
   </div>
-<div class="mbr-section-btn mbr-col-sm-12 mbr-col-md-12 mbr-col-lg-12 align-center"><button type="submit" class="btn btn-form btn-black display-4">Upload</button></div>
+<div class="mbr-section-btn mbr-col-sm-12 mbr-col-md-12 mbr-col-lg-12 align-center">
+	<button type="submit" class="btn btn-form btn-black display-4" onclick="move()">Upload</button></div>
                  
             </div>
         </div>
@@ -98,7 +99,7 @@
  
     </script>
     <script type="text/javascript" src = "mysecond.js"></script>
-<script>
+    <script>
 function move() {
   var elem = document.getElementById("myBar");   
   var width = 1;
