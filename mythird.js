@@ -68,7 +68,7 @@
                 var De = document.getElementById("desc").value;
             var postData = {
                 Firstname : fn,
-                LastName ln,
+                LastName: ln,
                 Description : De,
                 ID : id
             }
