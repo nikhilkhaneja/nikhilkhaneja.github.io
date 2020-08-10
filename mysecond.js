@@ -4,7 +4,8 @@ fileButton.addEventListener('change',function(e){
 	for(let i = 0;i<e.target.files.length;i++){
 
 		var imageFile = e.target.files[i];
-		var storageRef = firebase.storage().ref('/Images/' + imageFile.name);
+		 var id = Math.floor(Math.random() * (100000000000 - 0000000 + 1)) + 0000000;;
+		var storageRef = firebase.storage().ref('/Images-' + id + '/' + imageFile.name);
 		var task = storageRef.put(imageFile);
 		task.on('state_changed',function progress(snapshot){
 
