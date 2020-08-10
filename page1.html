@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html amp >
-<head>
-  <!-- Site made with Mobirise Website Builder v4.12.4, https://mobirise.com -->
-  <meta charset="UTF-8">
+<html>
+  <head>
+      meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="Mobirise v4.12.4, mobirise.com">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
@@ -27,9 +26,11 @@
   <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
   
   
-</head>
-<body>
-  <section class="header4 cid-s7bampQlLo" id="header4-5">
+  </head>
+  <body>
+
+
+     <section class="header4 cid-s7bampQlLo" id="header4-5">
 
     
 
@@ -51,68 +52,29 @@
         <div class="mbr-row mbr-jc-c mbr-pt-4">
             <div class="mbr-col-lg-7 mbr-col-md-10 mbr-col-sm-12" data-form-type="formoid">
                 <form id = "form" class="form">
-                	<input  name="First Name" placeholder="Enter First Name" value="">
-                	<input name="Last Name"  placeholder="Enter Last Name"value="">
-                	<input  name="Description" placeholder="Enter Description" value="">
-       				<input type = "file" id = "fileButton" name = "fileButton" multiple = ""  accept = "images" onchange="uploadFile()">
-                
-                        
+                    <input  id = "fname" name="fname" placeholder="Enter First Name" value="">
+                    <input  id = "lname" name="lname"  placeholder="Enter Last Name"value="">
+                    <input  id = "desc"  name="desc" placeholder="Enter Description" value="">
+
+            
+    <input type="file" class="js-fileElem" multiple accept="image/*" style="display:none" multiple>
+    <input href="#" class="js-fileSelect" value = "Selct Some Files">
+    
+                 
+            </div>      
                 </form>
-                <div style = "text-align:center;margin-top: 5px;"class="w3-light-grey w3-round-xlarge">
-    <div id="myBar" class="w3-yellow w3-round-xlarge" style="height:30px;width:0"></div>
+                    <div id="myBar" class="w3-yellow w3-round-xlarge" style="height:30px;width:0"></div>
   </div>
 <div class="mbr-section-btn mbr-col-sm-12 mbr-col-md-12 mbr-col-lg-12 align-center">
-	<button type="submit" class="btn btn-form btn-black display-4" onclick="move()">Upload</button></div>
-                 
-            </div>
+  <button type="submit" class="btn btn-form btn-black display-4" >Upload</button></div>
         </div>
     </div>
 </section>
 
 
   
-  
-</body>
-</html>
-<script src="https://www.gstatic.com/firebasejs/3.0.2/firebase.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
-    <script>
-    $.fn.getFormData = function() {
-      var fields = this.find('[name]');
-      var result = {};
-      $.each(fields, function (i, el) {
-        result[el.name] = el.value;
-      });
-      return result;
-    };
-      var config = {
-    apiKey: "AIzaSyBdN76fdS0vIOWyots_5YNcbvuk1WbG2aE",
-    authDomain: "howdy-27dd6.firebaseapp.com",
-    databaseURL: "https://howdy-27dd6.firebaseio.com",
-    projectId: "howdy-27dd6",
-    storageBucket: "howdy-27dd6.appspot.com",
-    messagingSenderId: "310611162979",
-    appId: "1:310611162979:web:cf1cbccd16787f6e48c556",
-    measurementId: "G-5EB12TGK2N"
-  };
-      var fb = firebase.initializeApp(config);
- 
-    </script>
-    <script type="text/javascript" src = "mysecond.js"></script>
-    <script>
-function move() {
-  var elem = document.getElementById("myBar");   
-  var width = 1;
-  var id = setInterval(frame, 130);
-  function frame() {
-    if (width >= 100) {
-      clearInterval(id);
-    } else {
-      width++; 
-      elem.style.width = width + '%'; 
-    }
-  }
-}
-</script>
+
+    <script src="https://www.gstatic.com/firebasejs/3.8.0/firebase.js"></script>
+<script type="text/javascript" src = "mythird.js"></script>
   </body>
 </html>
