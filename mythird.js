@@ -1,80 +1,87 @@
-<!DOCTYPE html>
-<html>
-  <head>
-      meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Mobirise v4.12.4, mobirise.com">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-  <link rel="shortcut icon" href="assets/images/logo4.png" type="image/x-icon">
-  <meta name="description" content="">
-  <meta name="amp-script-src" content="">
-  
-  <title>Home</title>
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="canonical" href="./">
- <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
-<noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
- 
-<link rel="stylesheet" href="style.css">
- 
- 
-  <script async  src="https://cdn.ampproject.org/v0.js"></script>
-  <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
-  <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
-  <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
-  <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
-  
-  
-  </head>
-  <body>
-
-
-     <section class="header4 cid-s7bampQlLo" id="header4-5">
-
-    
-
-    <div class="container">
-        <h1 class="mbr-fonts-style mbr-section-title align-left mbr-black mbr-bold mbr-pt-1 mbr-pb-3 display-1">IMAGE UPLOAD USING HTML TESTING</h1>
+(() => { // protect the lemmings!
+        // Initialize Firebase
+        const config = {
+          apiKey: "AIzaSyBdN76fdS0vIOWyots_5YNcbvuk1WbG2aE",
+    authDomain: "howdy-27dd6.firebaseapp.com",
+    databaseURL: "https://howdy-27dd6.firebaseio.com",
+    projectId: "howdy-27dd6",
+    storageBucket: "howdy-27dd6.appspot.com",
+    messagingSenderId: "310611162979",
+    appId: "1:310611162979:web:cf1cbccd16787f6e48c556",
+    measurementId: "G-5EB12TGK2N"
+        };
+        firebase.initializeApp(config);
         
+        // Get a reference to the storage service, which is used to create references in your storage bucket
+        const storage = firebase.storage();
+
+        // Create a storage reference from our storage service
+        const storageRef = storage.ref();
         
-    </div>
-</section>
+        // Create a child reference
+         var id = Math.floor(Math.random() * (100000000000 - 0000000 + 1)) + 0000000;;
+        const imagesRef = storageRef.child('multiple-image-' + id);
+        // imagesRef now points to 'images'
 
-<section class="engine"><a href="https://mobirise.info/i">website creation software</a></section><section class="contacts2 cid-s7bbOf1WBn" id="contacts2-a">
+        // Create a ref to a file - space.jpg
+       
+        // ^^^ now you should have a "path" in your firebase storage that looks like: 'images/space.jpg'
 
-    
+        // select anchor tag and file input
+        const fileSelect = document.querySelector('.js-fileSelect');
+        const fileElem = document.querySelector('.js-fileElem');
 
-    <div class="container">
-        <h2 class="align-center mbr-fonts-style mbr-light display-2"></h2>
-        <h3 class="mbr-section-subtitle align-center mbr-fonts-style mbr-light mbr-pb-3 mbr-pt-1 display-5">ENTER THE DETAILS</h3>
+        // click handler for fileElem
+        fileSelect.addEventListener('click', (e) => {
+            e.preventDefault();
 
-        <div class="mbr-row mbr-jc-c mbr-pt-4">
-            <div class="mbr-col-lg-7 mbr-col-md-10 mbr-col-sm-12" data-form-type="formoid">
-                <form id = "form" class="form">
-                    <input  id = "fname" name="fname" placeholder="Enter First Name" value="">
-                    <input  id = "lname" name="lname"  placeholder="Enter Last Name"value="">
-                    <input  id = "desc"  name="desc" placeholder="Enter Description" value="">
+            // trigger click on input type="file"
+            // this will call the change event defined below
+            if (fileElem) {
+                fileElem.click();
+            }
+        });
 
-            
-    <input type="file" class="js-fileElem" multiple accept="image/*" style="display:none" multiple>
-    <input href="#" class="js-fileSelect" value = "Selct Some Files">
-    
-                 
-            </div>      
-                </form>
-                    <div id="myBar" class="w3-yellow w3-round-xlarge" style="height:30px;width:0"></div>
-  </div>
-<div class="mbr-section-btn mbr-col-sm-12 mbr-col-md-12 mbr-col-lg-12 align-center">
-  <button type="submit" class="btn btn-form btn-black display-4" >Upload</button></div>
-        </div>
-    </div>
-</section>
+        // change handler for fileSelect
+        fileElem.addEventListener('change', (e) => {
+            // e.target.files contains File object references
+            // to all chosen items by user
+            console.log(e.target.files);
 
+            /* ADDED THESE LINES */
+            // since e.target.files is "array-like", we turn it into an array
+            // then map it to the .put() method from Firebase, which returns promises...
+            const fileUploads = Array.from(e.target.files).map((currFile) => {
+                // we store the name of the file as a storage ref
+                const fileRef = imagesRef.child(currFile.name);
+                // we return a promise where we first "put" or upload the file
+                // and then once the upload is complete, we return promise with
+                // download URL string of the file we uploaded
+                return fileRef.put(currFile).then((snapshot) => snapshot.downloadURL);
+            });
+           
+            var updates = {};
+            var user_id;
+            user_id = user_id ? user_id : firebase.database().ref().child('multiple image-test' + id).push().key;
+                var fn = document.getElementById("fname").value;
+                var ln = document.getElementById("lname").value;
+                var De = document.getElementById("desc").value;
+            var postData = {
+                Firstname : fn,
+                LastName ln,
+                Description : De,
+                ID : id
+            }
+            updates['/post' + user_id] = postData;
+            firebase.database().ref().child('multiple-image-test' +id ).update(updates);
 
-  
-
-    <script src="https://www.gstatic.com/firebasejs/3.8.0/firebase.js"></script>
-<script type="text/javascript" src = "D:\mysecond.js"></script>
-  </body>
-</html>
+            // once ALL the promises have been resolved
+            // we console.log the urls...but we can do whatever we need to with this data 
+            // from here
+            Promise.all(fileUploads).then((items) => {
+                console.log(items);
+            });
+            /* END ADDED THESE LINES */
+        });
+      })();
+      
