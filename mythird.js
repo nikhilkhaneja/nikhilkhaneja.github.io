@@ -64,11 +64,11 @@
         var updates = {};
         var user_id;
         user_id = user_id ? user_id : firebase.database().ref().child('multiple image-test' + id).push().key;
-        var fn = document.getElementById("fname").value;
+        var Fn = document.getElementById("fname").value;
         var De = document.getElementById("desc").value;
         var postData = 
         {
-            Firstname : fn,
+            Firstname : Fn,
             Description : De,
             ID : id
         }
