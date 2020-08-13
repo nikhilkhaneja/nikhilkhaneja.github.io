@@ -21,6 +21,8 @@
         
     // Create a child reference
     var id = Math.floor(Math.random() * (100000000000 - 0000000 + 1)) + 0000000;;
+    document.getElementById("demo").innerHTML = id;
+
     const imagesRef = storageRef.child('multiple-image-' + id);
     // imagesRef now points to 'images'
 
@@ -63,12 +65,10 @@
         var user_id;
         user_id = user_id ? user_id : firebase.database().ref().child('multiple image-test' + id).push().key;
         var fn = document.getElementById("fname").value;
-        var ln = document.getElementById("lname").value;
         var De = document.getElementById("desc").value;
         var postData = 
         {
             Firstname : fn,
-            LastName: ln,
             Description : De,
             ID : id
         }
@@ -84,4 +84,3 @@
         });      
     });
 })();
-      
