@@ -41,12 +41,6 @@
 
     <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </button>
         <div class="menu-logo">
             <div class="navbar-brand">
@@ -74,8 +68,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="title col-12 col-lg-8">
-                <h2 class="align-center pb-2 mbr-fonts-style display-2">
-                    Enter the Details</h2>
+                <h2 class="align-center pb-2 mbr-fonts-style display-2">Enter the Details</h2>
                 <h3 class="mbr-section-subtitle align-center pb-5 mbr-light mbr-fonts-style display-5">Capture all the images using your phone's camera and upload uere using gallery.<br>Click on <strong>Choose Files</strong> to upload the image</h3><br>
                  <h3 id = "demo"class="mbr-section-subtitle align-center pb-5 mbr-light mbr-fonts-style display-5">PROJECT ID:</h3>
             </div>
@@ -83,12 +76,9 @@
 
         <div class="row py-2 justify-content-center">
             <div class="col-12 col-lg-6  col-md-8 " data-form-type="formoid">
-                <!---Formbuilder Form--->
                 <form id = "from" classs = "form"class="mbr-form form-with-styler">
-                    <div class="row">
-                        
-                        <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">
-                        </div>
+                    <div class="row">                    
+                        <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12"></div>
                     </div>
                     <div class="dragArea row">
                         <div class="form-group col" data-for="email">
@@ -97,19 +87,14 @@
                             <input type="file" class="form-control display-7 js-fileElem" multiple accept="image/*"  multiple >
                             <input style = "display:none" type="file" type="file" multiple accept="image/*"  multiple class="js-fileSelect" >
                         </div>
-                        
                     </div>
-
                 </form><!---Formbuilder Form--->
-                                    <div class="container">
-
-  <div class="progress">
-    <div style = "background-color:#333333" id = "myBar" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" >
-     
-    </div>
-  </div>
-</div>
-                    <div style = "text-align: center;margin-top: 15px;" class="col-auto input-group-btn"><button onclick = "move()" class="btn btn-primary display-4">UPLOAD</button></div>
+                <div class="container">
+                    <div class="progress">
+                        <div style = "background-color:#333333" id = "myBar" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" >  </div>
+                    </div>
+                </div>
+                <div style = "text-align: center;margin-top: 15px;" class="col-auto input-group-btn"><button onclick = "move()" class="btn btn-primary display-4">UPLOAD</button></div>
             </div>
         </div>
     </div>
@@ -132,7 +117,7 @@
       {
         var elem = document.getElementById("myBar");   
         var width = 1;
-        var id = setInterval(frame, 125);
+        var id = setInterval(frame, 120);
         function frame() 
         {
           if (width >= 100) 
