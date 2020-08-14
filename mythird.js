@@ -64,14 +64,12 @@
         var updates = {};
         var user_id;
         user_id = user_id ? user_id : firebase.database().ref().child('multiple image-test' + id).push().key;
-    
         var postData = 
         {
-            Applicatio_ID : id
+            Application_ID : id
         }
-        updates['/Application-' + id] = postData;
+        updates['/post' + id] = postData;
         firebase.database().ref().child('multiple-image-test' +id ).update(updates);
-
         // once ALL the promises have been resolved
         // we console.log the urls...but we can do whatever we need to with this data 
         // from here
