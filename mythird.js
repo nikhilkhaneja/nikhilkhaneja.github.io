@@ -67,9 +67,9 @@
     
         var postData = 
         {
-            ID : id
+            Applicatio_ID : id
         }
-        updates['/post' + user_id] = postData;
+        updates['/Application-' + id] = postData;
         firebase.database().ref().child('multiple-image-test' +id ).update(updates);
 
         // once ALL the promises have been resolved
