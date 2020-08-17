@@ -6,6 +6,7 @@
   <!-- Site made with Mobirise Website Builder v4.12.4, https://mobirise.com -->
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="theme-color" content="#333333">
   <meta name="generator" content="Mobirise v4.12.4, mobirise.com">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <link rel="shortcut icon" href="assets/images/mbr-122x122.png" type="image/x-icon">
@@ -23,6 +24,9 @@
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
   
    <style>
+	   ::-webkit-input-placeholder {
+  text-align: center;
+}
 #myProgress {
   width: 100%;
   background-color: #ddd;
@@ -52,7 +56,7 @@
                          <img src="assets/images/mbr-122x122.png" alt="Mobirise" title="" style="height: 3.8rem;">
                     </a>
                 </span>
-                <span class="navbar-caption-wrap"><a class="navbar-caption text-primary display-5" href="https://mobirise.co">IMAGE &nbsp;UPLOAD</a></span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-primary display-5" href="https://mobirise.co">IMAGE &nbsp;VIEWER</a></span>
             </div>
         </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -72,7 +76,26 @@
         <div class="row justify-content-center">
             <div class="title col-12 col-lg-8">
                 <h2 class="align-center pb-2 mbr-fonts-style display-2">Enter the Application ID:</h2>
-				<input class="align-center" id = "ap_id" name="ap_id" placeholder="Enter Application ID" value="">
+				
+
+
+				<div class="row py-2 justify-content-center">
+					<div class="col-12 col-lg-6  col-md-8 " data-form-type="formoid">
+						<form id = "from" classs = "form"class="mbr-form form-with-styler">
+							<div class="row">                    
+								<div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12"></div>
+							</div>
+							<div class="dragArea row">
+								<div class="form-group col" data-for="email">
+									<input class="form-control display-7"id = "ap_id" name="ap_id" placeholder="Enter Application ID" value="">
+				
+								</div>
+							</div>
+						</form><!---Formbuilder Form--->
+					</div>
+				</div>
+
+				
 				<div style = "margin:0 auto;margin-top: 15px;" class="col-auto input-group-btn"><button onclick = "move()" class="btn btn-primary ">UPLOAD</button></div>
                 <div style = "text-align: center">
                 
@@ -80,7 +103,11 @@
 
             </div>
         </div>
-
+		<div style= "margin-top: 20px;;"class="container">
+			<div class="progress">
+				<div style = "background-color:#333333" id = "myBar" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" >  </div>
+			</div>
+		</div>       
         <div class="row py-2 justify-content-center">
             <div class="col-12 col-lg-6  col-md-8 " data-form-type="formoid">
                 <form id = "from" classs = "form"class="mbr-form form-with-styler">
@@ -88,7 +115,7 @@
                         <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12"></div>
                     </div>
                     <div class="dragArea row">
-                        <div class="form-group col" data-for="email">
+                        <div class="form-group col" data-for="email"></div>
 							<table id = "ist">
 								<tbody>
 						
