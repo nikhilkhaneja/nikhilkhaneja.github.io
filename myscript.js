@@ -1,6 +1,6 @@
 function move()
 {
-const config = 
+    const config = 
     {
         apiKey: "AIzaSyBdN76fdS0vIOWyots_5YNcbvuk1WbG2aE",
         authDomain: "howdy-27dd6.firebaseapp.com",
@@ -19,56 +19,49 @@ const config =
     {
         if (width >= 100) 
         {
-           
             clearInterval(id);
-        
-    // Get a reference to the storage service, which is used to create references in your storage bucket
-    
-    
-    const storage = firebase.storage();
+            
+            const storage = firebase.storage();
+            const storageRef = storage.ref();
+            $('#ist').find('tbody').html('');
 
-    // Create a storage reference from our storage service
-    const storageRef = storage.ref();
-    $('#ist').find('tbody').html('');
+            var new_htm = '';
+            new_htm = '<h3 class="mbr-section-subtitle align-center pb-5 mbr-light mbr-fonts-style display-5">The Images Retrieved are:</h3>';
+            $('#ist').find('tbody').append(new_htm);
 
-    var new_htm = '';
-    new_htm = '<h3 class="mbr-section-subtitle align-center pb-5 mbr-light mbr-fonts-style display-5">The Images Retrieved are:</h3>';
-    $('#ist').find('tbody').append(new_htm);
+            var i = 0;
 
-var i = 0;
+            var fn = document.getElementById("ap_id").value;
+            storageRef.child('multiple-image-'+fn+'/').listAll().then(function(result)
+            {
+                result.items.forEach(function(imageRef)
+                {
+                    console.log("IMAge Reference" + imageRef.toString())
 
-var fn = document.getElementById("ap_id").value;
-storageRef.child('multiple-image-'+fn+'/').listAll().then(function(result){
+                    i++;
+                    displayImage(i, imageRef);  
+                });
 
-  result.items.forEach(function(imageRef){
+            });
+            function displayImage(row, images)
+            {
+                var new_html = '';
+                images.getDownloadURL().then(function(url)
+                {
+          
+                    new_html += '<div style= "text-align : center">';
+                    new_html += '<img width = "270" height = "270" src = '+url+'>';
+                    new_html += '<br><br>';
+                    new_html += "</div>";
 
-    console.log("IMAge Reference" + imageRef.toString())
-
-    i++;
-    displayImage(i, imageRef);
-
-
-  });
-
-});
-function displayImage(row, images){
-  var new_html = '';
-    images.getDownloadURL().then(function(url){
-      
-
-      new_html += '<div style= "text-align : center">';
-      new_html += '<img width = "270" height = "270" src = '+url+'>';
-      new_html += '<br><br>';
-      new_html += "</div>";
-
-      $('#ist').find('tbody').append(new_html);
-  });
+                    $('#ist').find('tbody').append(new_html);
+                });
+            }
+        } 
+        else 
+        {
+            width++; 
+            elem.style.width = width + '%'; 
+        }
+    } 
 }
-} 
-else 
-{
-    width++; 
-    elem.style.width = width + '%'; 
-}
-} 
-  }
