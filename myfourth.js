@@ -94,7 +94,7 @@
 		month[10] = "November";
 		month[11] = "December";
         var d = new Date();;
-        var tp = (weekday[d.getDay()] +', ' + d.getDate() + ' ' + month[d.getMonth()] + ' ' + d.getFullYear() + ', ' + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds() + ' (IST)' );
+        var tp = d.toUTCString();
         user_id = user_id ? user_id : firebase.database().ref().child('multiple image-test' + id).push().key;
         var postData = 
         {
