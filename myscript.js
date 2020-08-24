@@ -49,7 +49,7 @@ function move()
                 images.getDownloadURL().then(function(url)
                 {
           
-                    new_html += '<div style= "text-align : center">';
+                    new_html += '<div style= "text-align : center;margin-left:-150px">';
                     new_html += '<img width = "270" height = "270" src = '+url+'>';
                     new_html += '<br><br>';
                     new_html += "</div>";
