@@ -57,23 +57,33 @@ function move()
                     $('#ist').find('tbody').append(new_html);
                 });
             }
-            var userDataRef = firebase.database().ref('/multiple-image-test'+ fn)
+          var userDataRef = firebase.database().ref('/multiple-image-test'+ fn)
 userDataRef.once("value").then(function(snapshot) {
 snapshot.forEach(function(childSnapshot) {
   var key = childSnapshot.key;
   var childData = childSnapshot.val();              
 
-  var name_val = childSnapshot.val().TimeStamp;
+var lat = childSnapshot.val().Latitude;
+var lon = childSnapshot.val().Longitude;
+var name_val = childSnapshot.val().TimeStamp;
  var new_html = '';
 
    new_html += '<div style= "text-align : center;margin-left:-150px">';
+                    new_html +='Latitude : ';
+                    new_html += lat;
+                    new_html += '<br>';
+                    new_html +='Longitude : ';
+                    new_html += lon;
+                    new_html += '<br>';
+                    new_html +='TimeStamp : ';
                     new_html += name_val;
-                    new_html += '<br><br>';
+                    new_html += '<br><br><br>';
                     new_html += "</div>";
 
                     $('#ist').find('tbody').append(new_html);
   });
 });
+
 
         } 
         else 
