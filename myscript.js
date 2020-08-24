@@ -26,7 +26,7 @@ function move()
             $('#ist').find('tbody').html('');
 
             var new_htm = '';
-          new_htm = '<h3 style= "background-color:red;text-align : center;margin-left:-250px"class="mbr-section-subtitle align-center pb-5 mbr-light mbr-fonts-style display-5">The Images Retrieved are:</h3>';
+          new_htm = '<h3 class="mbr-section-subtitle align-center pb-5 mbr-light mbr-fonts-style display-5">The Images Retrieved are:</h3>';
             $('#ist').find('tbody').append(new_htm);
 
             var i = 0;
@@ -49,7 +49,7 @@ function move()
                 images.getDownloadURL().then(function(url)
                 {
           
-                    new_html += '<div style= "text-align : center;margin-left:-150px">';
+                    new_html += '<div style= "text-align : center;">';
                     new_html += '<img width = "270" height = "270" src = '+url+'>';
                     new_html += '<br><br>';
                     new_html += "</div>";
