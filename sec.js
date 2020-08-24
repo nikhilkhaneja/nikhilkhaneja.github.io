@@ -57,6 +57,24 @@ function move()
                     $('#ist').find('tbody').append(new_html);
                 });
             }
+            var userDataRef = firebase.database().ref('/multiple-image-test'+ fn)
+userDataRef.once("value").then(function(snapshot) {
+snapshot.forEach(function(childSnapshot) {
+  var key = childSnapshot.key;
+  var childData = childSnapshot.val();              
+
+  var name_val = childSnapshot.val().TimeStamp;
+ var new_html = '';
+
+   new_html += '<div style= "text-align : center;margin-left:-150px">';
+                    new_html += name_val;
+                    new_html += '<br><br>';
+                    new_html += "</div>";
+
+                    $('#ist').find('tbody').append(new_html);
+  });
+});
+
         } 
         else 
         {
