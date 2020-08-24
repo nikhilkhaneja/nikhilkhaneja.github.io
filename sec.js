@@ -68,7 +68,7 @@ var lon = childSnapshot.val().Longitude;
 var name_val = childSnapshot.val().TimeStamp;
  var new_html = '';
 
-   new_html += '<div style= "text-align : center;margin-left:-150px">';
+   new_html += '<div style= "text-align : center">';
                     new_html +='Latitude : ';
                     new_html += lat;
                     new_html += '<br>';
