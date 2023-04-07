@@ -463,7 +463,7 @@ small {
 *************************/
 .about-me {
 	margin-block-start: var(--section-mt);
-	background: var(--secondary-clr);
+	background: black;
 	padding: var(--section-mt) 1rem;
 }
 
